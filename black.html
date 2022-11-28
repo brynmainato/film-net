@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Adam</title>
+    <link rel="stylesheet" href="movies.css">
+</head>
+<body>
+    <h1 class="latest">BLACK ADAM</h1>
+    <div class="bimg">
+        <img width="50%" src="images/black adam.jpg" alt="">
+        
+        
+    </div>
+    <p class="price">R50</p>
+    <h2 class="buy-here">BUY HERE</h2>
+    <br><br>
+
+    <div id="smart-button-container">
+        <div style="text-align: center;">
+          <div id="paypal-button-container"></div>
+        </div>
+      </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AUlZlQR7N--QatpdBYCDy2Hdev4x4TLSKVn6pMEhS_XwDl7SqYOQXnL2Ea5NllYlyWTBA87jWqEVSKN1&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script>
+      function initPayPalButton() {
+        paypal.Buttons({
+          style: {
+            shape: 'rect',
+            color: 'gold',
+            layout: 'vertical',
+            label: 'paypal',
+            
+          },
+  
+          createOrder: function(data, actions) {
+            return actions.order.create({
+              purchase_units: [{"description":"Latest movies","amount":{"currency_code":"USD","value":3}}]
+            });
+          },
+  
+          onApprove: function(data, actions) {
+            return actions.order.capture().then(function(orderData) {
+              
+              // Full available details
+              console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+  
+              // Show a success message within this page, e.g.
+              const element = document.getElementById('paypal-button-container');
+              element.innerHTML = '';
+              element.innerHTML = '<a href="https://mega.nz/file/JAIGWKTZ#KewgFDxQLGxmlL9cOckNbQmr1ksBhNIqY8-lYXl3eM8">Download Here</a>';
+  
+              // Or go to another URL:  actions.redirect('thank_you.html');
+              
+            });
+          },
+  
+          onError: function(err) {
+            console.log(err);
+          }
+        }).render('#paypal-button-container');
+      }
+      initPayPalButton();
+    </script>
+</body>
+</html>

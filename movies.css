@@ -1,0 +1,73 @@
+body{
+    background-color: rgb(190, 189, 189);
+    border-radius: 20px;
+}
+.movie-info h1{
+    text-align: center;
+}
+.movie-info p{
+    font-size: 16px;
+}
+.movie-img p{
+    text-align: center;
+}
+.film-s{
+    text-align: center;
+}
+button{
+    background-color: rgb(13, 204, 252);
+    border-radius: 20px;
+   border-style: none;
+   color: white;
+   
+   height: 30px;
+   width: 100px;
+}
+button:hover{
+    cursor: pointer;
+}
+.movie-img img{
+    border-radius: 10px;
+}
+.movie-img{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.price{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 18px;
+}
+.latest{
+    text-align: center;
+
+}
+.label{
+    text-align: center;
+    align-items: center;
+}
+.bimg{
+    display: flex;
+    border-radius: 20px;
+}
+.bimg img{
+    border-radius: 20px;
+}
+.bimg{
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+  justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+
+}
+.buy-here{
+    display: block;
+    text-align: center;
+    background-color: rgb(14, 135, 206);
+    background-: 100px;
+    border-radius: 30px;
+}
